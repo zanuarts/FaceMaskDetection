@@ -19,6 +19,10 @@ def get_encoding(model, img):
     idx = pred[0][0]
     if (idx):
         print("Not Wearing Masker")
+        res = 'Not Wearing Masker'
+        return res
     else:
         print("Wearing Masker")
-    return pred
+        res = 'Wearing Masker'
+        return res
+    

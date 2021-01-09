@@ -3,6 +3,7 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 import os
 from preprocessing import preprocessing_image, get_encoding
+from detector import framing
 
 app = Flask(__name__)
 
@@ -36,7 +37,8 @@ def hello_world():
             file.stream.seek(0)
             image = preprocessing_image(dest)
             encoded_image = get_encoding(model, image)
-            return render_template('result.html')
+            detect = framing(dest)
+            return render_template('result.html', result=encoded_image.upper(), image_file=detect)
 
 if __name__ == '__main__':
     app.run(debug=True)

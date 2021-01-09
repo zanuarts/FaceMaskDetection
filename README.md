@@ -2,15 +2,21 @@
 
 Face Mask Detection using CNN with 85% accuracy.
 
+## Getting Started
+
+Make sure you have python installed on your computer/laptop. Then run the following command to run on your machine.
+
+1. Install requirements `pip install requirements.txt`
+2. Create virtual environment `virtualenv venv`
+3. Go to script folder and activate virtual environment `cd venv/Scripts/activate`
+4. Set Flask App `export FLASK_APP=app.py`
+5. Run Flask `flask run`
+
 ## Plot Training and Testing
-
-Accuracy
-
-<img src='/img/plot_accuracy.png'>
-
-Loss
-
-<img src='/img/plot_loss.png'>
+<p float="left">
+    <img src='/img/plot_accuracy.png' alt="accuracy" width="20%" height="auto">
+    <img src='/img/plot_loss.png' alt="loss" width="20%" height="auto">
+</p>
 
 ## Dataset
 

@@ -14,8 +14,8 @@ Make sure you have python installed on your computer/laptop. Then run the follow
 
 ## Plot Training and Testing
 <p float="left">
-    <img src='/img/plot_accuracy.png' alt="accuracy" width="100%" height="auto">
-    <img src='/img/plot_loss.png' alt="loss" width="100%" height="auto">
+    <img src='/img/plot_accuracy.png' alt="accuracy" width="50%" height="auto">
+    <img src='/img/plot_loss.png' alt="loss" width="50%" height="auto">
 </p>
 
 ## Dataset

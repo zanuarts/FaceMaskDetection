@@ -8,7 +8,7 @@ from detector import framing
 app = Flask(__name__)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER = 'static/img/uploaded'
+UPLOAD_FOLDER = 'static/img/uploaded/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'jfif'])
 
 model = load_model('model/model_cnn.h5')
@@ -37,8 +37,8 @@ def hello_world():
             file.stream.seek(0)
             image = preprocessing_image(dest)
             encoded_image = get_encoding(model, image)
-            detect = framing(dest)
-            return render_template('result.html', result=encoded_image.upper(), image_file=detect)
+            # detect = framing(dest)
+            return render_template('result.html', result=encoded_image.upper(), image_file=dest)
 
 if __name__ == '__main__':
     app.run(debug=True)

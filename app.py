@@ -3,7 +3,9 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 import os
 from preprocessing import preprocessing_image, get_encoding
-from detector import framing
+from detector import detectPredictMask
+import imutils
+import cv2
 
 app = Flask(__name__)
 
@@ -35,10 +37,12 @@ def hello_world():
             file.stream.seek(0)
             file.save(dest)
             file.stream.seek(0)
-            image = preprocessing_image(dest)
+            image = dest
+            image = preprocessing_image(image)
             encoded_image = get_encoding(model, image)
-            # detect = framing(dest)
-            return render_template('result.html', result=encoded_image.upper(), image_file=dest)
+            # img = cv2.imread(image)
+            detect = detectPredictMask(image)
+            return render_template('result.html', result=encoded_image.upper(), image_file=detect)
 
 if __name__ == '__main__':
     app.run(debug=True)

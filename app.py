@@ -41,8 +41,8 @@ def hello_world():
             image = preprocessing_image(image)
             encoded_image = get_encoding(model, image)
             # img = cv2.imread(image)
-            detect = detectPredictMask(image)
-            return render_template('result.html', result=encoded_image.upper(), image_file=detect)
+            # detect = detectPredictMask(image)
+            return render_template('result.html', result=encoded_image.upper(), image_file=dest)
 
 if __name__ == '__main__':
     app.run(debug=True)
